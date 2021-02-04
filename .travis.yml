@@ -1,4 +1,3 @@
-sudo: required
 language: generic
 services:
   - docker
@@ -6,5 +5,5 @@ services:
 before_install:
   - docker build -t shameersn/docker-react -f Dockerfile.dev .
 
-scrips:
+script:
   - docker run -e CI=true shameersn/docker-react npm run test -- --coverage
